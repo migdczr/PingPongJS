@@ -1,2 +1,3 @@
-# PingPongJS
- Leraning a little with games :)
+# Ping Pong v.TurboJS
+
+Leraning a little with games :)
