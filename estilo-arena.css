@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 *,
 *::after,
 *::before {
@@ -5,35 +7,36 @@
 }
 
 :root {
-  --hue: 200;
-  --saturation: 50%;
-  --foreground-color: hsl(var(--hue), var(--saturation), 75%);
-  --background-color: hsl(var(--hue), var(--saturation), 20%);
+  --hue: 600;
+  --saturation: 100%;
+  --foreground-color: hsl(var(--hue), var(--saturation), 60%);
+  --background-color: hsl(var(--hue), var(--saturation), 10%);
 }
 
 body {
   margin: 0;
-  background-color: var(--background-color);
+  background-color: black;
   overflow: hidden;
 }
 
 .paddle {
   --position: 50;
-
+  display: none;
   position: absolute;
   background-color: var(--foreground-color);
   top: calc(var(--position) * 1vh);
   transform: translateY(-50%);
   width: 1vh;
-  height: 10vh;
 }
 
 .paddle.left {
-  left: 1vw;
+  height: 2vh;
+  left: 0vw;
 }
 
 .paddle.right {
-  right: 1vw;
+  right: 0vw;
+  height: 2vh;
 }
 
 .ball {
@@ -41,21 +44,23 @@ body {
   --y: 50;
 
   position: absolute;
-  background-color: var(--foreground-color);
+  background-color: greenyellow;
   left: calc(var(--x) * 1vw);
   top: calc(var(--y) * 1vh);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  width: 2.5vh;
-  height: 2.5vh;
+  width: 2vh;
+  height: 2vh;
 }
 
 .score {
+  font-family: "Press Start 2P", cursive;
   display: flex;
   justify-content: center;
   font-weight: bold;
-  font-size: 7vh;
+  font-size: 2vh;
   color: var(--foreground-color);
+  display: none;
 }
 
 .score > * {
@@ -63,10 +68,10 @@ body {
   flex-basis: 0;
   padding: 0 2vh;
   margin: 1vh 0;
-  opacity: 0.5;
+  opacity: 0.9;
 }
 
 .score > :first-child {
   text-align: right;
-  border-right: 0.5vh solid var(--foreground-color);
+  border-right: 0.8vh solid var(--foreground-color);
 }

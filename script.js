@@ -17,7 +17,7 @@ function update(time) {
       getComputedStyle(document.documentElement).getPropertyValue("--hue")
     );
 
-    document.documentElement.style.setProperty("--hue", hue + delta * 0.01);
+    //document.documentElement.style.setProperty("--hue", hue + delta * 0.01);
 
     if (isLose()) handleLose();
   }
@@ -28,7 +28,7 @@ function update(time) {
 
 function isLose() {
   const rect = ball.rect();
-  return rect.right >= window.innerWidth || rect.left <= 0;
+  //return rect.right >= window.innerWidth || rect.left <= 0;
 }
 
 function handleLose() {

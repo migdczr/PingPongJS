@@ -1,6 +1,5 @@
-ball.js;
-const INITIAL_VELOCITY = 0.025;
-const VELOCITY_INCREASE = 0.00001;
+const INITIAL_VELOCITY = 0.03;
+const VELOCITY_INCREASE = 0.0000002;
 
 export default class Ball {
   constructor(ballElem) {
@@ -33,7 +32,7 @@ export default class Ball {
     this.y = 50;
     this.direction = { x: 0 };
     while (
-      Math.abs(this.direction.x) <= 0.2 ||
+      Math.abs(this.direction.x) <= 0.5 ||
       Math.abs(this.direction.x) >= 0.9
     ) {
       const heading = randomNumberBetween(0, 2 * Math.PI);
@@ -52,9 +51,13 @@ export default class Ball {
       this.direction.y *= -1;
     }
 
-    if (paddleRects.some((r) => isCollision(r, rect))) {
+    if (rect.right >= window.innerWidth || rect.left <= 0) {
       this.direction.x *= -1;
     }
+
+    //if (paddleRects.some((r) => isCollision(r, rect))) {
+    //  this.direction.x *= -1;
+    //}
   }
 }
 
